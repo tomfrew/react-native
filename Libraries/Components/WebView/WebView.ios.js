@@ -316,7 +316,7 @@ class WebView extends React.Component {
 
     /**
      * Sets the user-agent for the `WebView`.
-     * @platform android
+     * iOS only supported when using `useWebKit=true` 
      */
     userAgent: PropTypes.string,
 
@@ -528,6 +528,7 @@ class WebView extends React.Component {
         style={webViewStyles}
         source={resolveAssetSource(source)}
         injectedJavaScript={this.props.injectedJavaScript}
+        userAgent={this.props.userAgent}
         bounces={this.props.bounces}
         scrollEnabled={this.props.scrollEnabled}
         decelerationRate={decelerationRate}

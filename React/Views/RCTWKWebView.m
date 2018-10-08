@@ -86,6 +86,10 @@ static NSString *const MessageHanderName = @"ReactNative";
     _webView.scrollView.scrollEnabled = _scrollEnabled;
     _webView.scrollView.bounces = _bounces;
 
+    if (_userAgent) {
+      _webView.customUserAgent = _userAgent;
+    }
+
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000 /* __IPHONE_11_0 */
     if ([_webView.scrollView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
       _webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
